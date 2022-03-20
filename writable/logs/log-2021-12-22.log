@@ -1,8 +1,0 @@
-CRITICAL - 2021-12-22 09:22:36 --> Argument 2 passed to view() must be of the type array, null given, called in C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\app\Controllers\Home.php on line 29
-#0 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\app\Controllers\Home.php(29): view('templates/foote...', NULL)
-#1 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\system\CodeIgniter.php(918): App\Controllers\Home->index()
-#2 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
-#3 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#4 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\public\index.php(45): CodeIgniter\CodeIgniter->run()
-#5 C:\xampp\htdocs\projects\projects_php72\nbtc\NBTC\index.php(2): require_once('C:\\xampp\\htdocs...')
-#6 {main}
