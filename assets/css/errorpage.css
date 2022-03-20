@@ -1,0 +1,27 @@
+.error_container{
+    display: table;
+    height: 80vh;
+    width: 100%;
+}
+  
+.error_container .error_content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.error_container .error_content .error_text {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.header_container .header_content .nav_menu a {
+    color: #000;
+}
+
+.header_container .header_content .nav_menu.active a:after {
+    border: none;
+}
+
+.menu_container .menu_content .nav_menu.active a:after {
+    border: none;
+}
