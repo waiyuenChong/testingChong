@@ -26,7 +26,6 @@
             <input type="email" class="form-control" placeholder="Email" name="email" pattern="\w*\@{1}\w*[\.com]"
               required value="<?php echo set_value('email'); ?>">
           </div><br />
-          <div class="warning_box"> <?php echo form_error('email'); ?></div>
 
           <button class="btn btn-danger mb-4 shadow-2" style="width: 100%;height:50px;">
             <?=lang('lang.credential_nav_reset_pwd') ?>
@@ -60,14 +59,5 @@
 </div>
 <!--Register success modal end-->
 <script>
-$(document).ready(function() {
-  if (<?= $reset?> == 1) {
-    $("#reset_success").modal();
-  }
-});
 
-function empty() {
-  <?php session_unset('RESET')?>
-  window.location.replace('<?= site_url('credential/signin') ?>');
-}
 </script>
