@@ -103,88 +103,88 @@ class Credential extends MY_Controller
 
         $data = [];
 
-        $position = $this->model->getWhere([
-            'table'     => 'Position',
-            'select'    => 'id,name',
-            // 'row'       => 1,
-        ]);
+        // $position = $this->model->getWhere([
+        //     'table'     => 'Position',
+        //     'select'    => 'id,name',
+        //     // 'row'       => 1,
+        // ]);
 
-        $team = $this->model->getWhere([
-            'table'     => 'Team',
-            'select'    => 'id,name',
-            // 'row'       => 1,
-        ]);
-
-
-        $data['position'] = isset($position) ? $position : [];
-        $data['team'] = isset($team) ? $team : [];
-
-        if ($_POST) {
-
-            $valid_name = $this->model->getWhere([
-                'table'     => 'Position',
-                'select'    => 'name',
-                'condition' => ['name' => $_POST['name']],
-                'row'       => 1,
-            ]);
-
-            $valid_email = $this->model->getWhere([
-                'table'     => 'User',
-                'select'    => 'email',
-                'condition' => ['email' => $_POST['email']],
-                'row'       => 1,
-            ]);
-
-            $valid_handphone = $this->model->getWhere([
-                'table'     => 'User',
-                'select'    => 'email',
-                'condition' => ['email' => $_POST['email']],
-                'row'       => 1,
-            ]);
+        // $team = $this->model->getWhere([
+        //     'table'     => 'Team',
+        //     'select'    => 'id,name',
+        //     // 'row'       => 1,
+        // ]);
 
 
+        // $data['position'] = isset($position) ? $position : [];
+        // $data['team'] = isset($team) ? $team : [];
 
-            if ((isset($valid_name) && !empty($valid_name)) || (isset($valid_email) && !empty($valid_email)) || (isset($valid_handphone) && !empty($valid_handphone))) {
+        // if ($_POST) {
 
-                $this->session->setFlashdata('notification', ['title' => "SignUp Failed", 'message' => "User Exist", 'type' => 'danger']);
-                return redirect()->to(site_url('/credential/signin'));
-            } else {
+        //     $valid_name = $this->model->getWhere([
+        //         'table'     => 'Position',
+        //         'select'    => 'name',
+        //         'condition' => ['name' => $_POST['name']],
+        //         'row'       => 1,
+        //     ]);
+
+        //     $valid_email = $this->model->getWhere([
+        //         'table'     => 'User',
+        //         'select'    => 'email',
+        //         'condition' => ['email' => $_POST['email']],
+        //         'row'       => 1,
+        //     ]);
+
+        //     $valid_handphone = $this->model->getWhere([
+        //         'table'     => 'User',
+        //         'select'    => 'email',
+        //         'condition' => ['email' => $_POST['email']],
+        //         'row'       => 1,
+        //     ]);
 
 
-                $this->session->setFlashdata('notification', ['title' => "SignUp Successful", 'message' => "Please proceed to login", 'type' => 'success']);
-                $_POST['password']    = hash('SHA256', hash('SHA256', $_POST['password']));
-                $new_signup = array(
-                    'table' => 'User',
-                    'data'  => array(
-                        // 'name'     => $_POST['name'],
-                        'email'        => $_POST['email'],
-                        'password'     => $_POST['password'],
-                        'phone_no'     => $_POST['phone_no'],
-                        'role_id'      => 3,
-                        'Position'     => $_POST['position'],
-                        'team'         => $_POST['team'],
-                        'created_at'   => $date,
-                        'status'       => 1,
-                    ),
-                );
-                $signup = $this->model->DataInsert($new_signup);
 
-                // preview($signup);die;
-                $new_signup1 = array(
-                    'table' => 'User_detail',
-                    'data'  => array(
-                        'user_id'     => $signup,
-                        'name'        => $_POST['name'],
-                        'created_at'   => $date,
-                        'created_by'   => $signup,
-                        'status'       => 1,
-                    ),
-                );
-                $signup1 = $this->model->DataInsert($new_signup1);
+        //     if ((isset($valid_name) && !empty($valid_name)) || (isset($valid_email) && !empty($valid_email)) || (isset($valid_handphone) && !empty($valid_handphone))) {
 
-                return redirect()->to(site_url('/credential/signin'));
-            }
-        }
+        //         $this->session->setFlashdata('notification', ['title' => "SignUp Failed", 'message' => "User Exist", 'type' => 'danger']);
+        //         return redirect()->to(site_url('/credential/signin'));
+        //     } else {
+
+
+        //         $this->session->setFlashdata('notification', ['title' => "SignUp Successful", 'message' => "Please proceed to login", 'type' => 'success']);
+        //         $_POST['password']    = hash('SHA256', hash('SHA256', $_POST['password']));
+        //         $new_signup = array(
+        //             'table' => 'User',
+        //             'data'  => array(
+        //                 // 'name'     => $_POST['name'],
+        //                 'email'        => $_POST['email'],
+        //                 'password'     => $_POST['password'],
+        //                 'phone_no'     => $_POST['phone_no'],
+        //                 'role_id'      => 3,
+        //                 'Position'     => $_POST['position'],
+        //                 'team'         => $_POST['team'],
+        //                 'created_at'   => $date,
+        //                 'status'       => 1,
+        //             ),
+        //         );
+        //         $signup = $this->model->DataInsert($new_signup);
+
+        //         // preview($signup);die;
+        //         $new_signup1 = array(
+        //             'table' => 'User_detail',
+        //             'data'  => array(
+        //                 'user_id'     => $signup,
+        //                 'name'        => $_POST['name'],
+        //                 'created_at'   => $date,
+        //                 'created_by'   => $signup,
+        //                 'status'       => 1,
+        //             ),
+        //         );
+        //         $signup1 = $this->model->DataInsert($new_signup1);
+
+        //         return redirect()->to(site_url('/credential/signin'));
+        //     }
+        // }
 
 
         echo view('templates/header', $this->header);

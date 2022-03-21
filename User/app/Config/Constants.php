@@ -104,10 +104,10 @@ define('SCSS_PATH', BASE_URL . '/assets/scss');
 define('COOKIE_EXP', '31536000');
 
 //db setting
-define('HOSTNAME', '');
-define('USER_NAME', '');
-define('PASSWORD', '');
-define('DATABASE', '');
+define('HOSTNAME', '18.138.204.246');
+define('USER_NAME', 'i4d');
+define('PASSWORD', 'i4d5028');
+define('DATABASE', 'testingChong');
 
 // Google API Key
 define('API_Key', 'AIzaSyD34I8monOVhvJf_Q92DNOpolfmOlBmTcI');
