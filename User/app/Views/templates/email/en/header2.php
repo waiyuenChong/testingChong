@@ -1,8 +1,10 @@
 <style>
     .logo_row {
-        background-color: lightblue;
+        background-color: black;
         height: 70px;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 </style>
 

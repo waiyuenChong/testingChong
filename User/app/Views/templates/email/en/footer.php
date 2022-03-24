@@ -1,8 +1,22 @@
-<p>If you have any problems, please forward this email to <a href="mailto:customerservice@eurocapfund.com" target="_top">customerservice@eurocapfund.com</a></p>
+<style>
+    .first_p {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* i{
+        display: flex;
+        justify-content: center;
+    } */
+</style>
+
+
+
+<p class="first_p">If you have any problems, please forward this email to <a href="mailto:support@vigrab.com" target="_top">support@vigrab.com</a></p>
 <br>
 <br>
-<p>Best regards,<br>Vigrab Admin</p>
 <br>
 <br>
 </div>
-<i>*** This is an automatically generated email please do not reply to this message. ***</i>
+<i style="padding-left: 10%;">*** This is an automatically generated email please do not reply to this message. ***</i>
+<p style="padding-left:10%">Best regards,<br>Vigrab</p>

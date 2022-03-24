@@ -9,7 +9,7 @@ class MY_Model extends Model
 
     public function __construct()
     {
-        // $this->db = \Config\Database::connect('default');
+        $this->db = \Config\Database::connect('default');
     }
 
     public function DataInsert($array = array())

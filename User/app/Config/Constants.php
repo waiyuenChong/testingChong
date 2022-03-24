@@ -80,7 +80,7 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 define('PROJECT', 'EiSengCap');
 
 // BASE URL
-define('BASE_URL', 'http://localhost/projects/projects_php72/onesoftlab');
+define('BASE_URL', 'http://localhost/projects/projects_php72/testingChong/User');
 
 // CSS PATH
 define('CSS_PATH', BASE_URL . '/assets/css');
@@ -107,7 +107,7 @@ define('COOKIE_EXP', '31536000');
 define('HOSTNAME', '18.138.204.246');
 define('USER_NAME', 'i4d');
 define('PASSWORD', 'i4d5028');
-define('DATABASE', 'testingChong');
+define('DATABASE', 'testingchong');
 
 // Google API Key
 define('API_Key', 'AIzaSyD34I8monOVhvJf_Q92DNOpolfmOlBmTcI');

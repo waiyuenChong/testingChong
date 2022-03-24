@@ -46,6 +46,10 @@ echo form_open_multipart('credential/signup', $attributes);
   }
 </style>
 
+<?php
+// preview($position);die;
+?>
+
 <div class="auth-wrapper">
   <div class="auth-content">
     <div class="auth-bg">
@@ -87,13 +91,17 @@ echo form_open_multipart('credential/signup', $attributes);
         <div class="col-md mb-4">
           <select class="form-select form-select-sm" name="position" aria-label=".form-select-sm example">
             <h5>Position</h5>
-           
+            <?php foreach ($position as $key => $value) { ?>
+              <option value="<?= $value->$id ?>"><?= $value->name ?></option>
+            <?php } ?>
           </select>
         </div>
         <div class="col-md mb-4">
           <select class="form-select form-select-sm" name="team" aria-label=".form-select-sm example">
             <h5>Team</h5>
-           
+            <?php foreach ($team as $key => $value) { ?>
+              <option value="<?= $value->$id ?>"><?= $value->name ?></option>
+            <?php } ?>
           </select>
         </div>
         <button type="submit" class="btn btn-primary shadow-2 mb-4"> Sign up</button>
