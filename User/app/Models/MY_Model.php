@@ -26,26 +26,32 @@ class MY_Model extends Model
             ])->id;
         }
     }
+
     public function DataUpdate($array = array())
     {
         $builder = $this->db->table($array['table']);
         if (isset($array['data']) && count($array['data']) > 0) {
             foreach ($array['data'] as $key => $value) {
-                $builder->set($key, "$value", false);
+                $builder->set($key, $value);
+            }
+        }
+        if (isset($array['data_count']) && count($array['data_count']) > 0) {
+            foreach ($array['data_count'] as $key => $value) {
+                $builder->set($key, $value, false);
             }
         }
         if (isset($array['condition']) && count($array['condition']) > 0) {
             foreach ($array['condition'] as $key => $value) {
-                $builder->where($key, "$value");
+                $builder->where($key, $value);
             }
         }
         if (isset($array['condition_like_both']) && count($array['condition_like_both']) > 0) {
             foreach ($array['condition_like_both'] as $key => $value) {
-                $builder->like($key, "$value", 'both');
+                $builder->like($key, $value, 'both');
             }
         }
         $query = $builder->update();
-        // echo $this->db->getLastQuery();
+        // echo $this->db->getLastQuery();die;
         if (isset($query) && $query == 1) {
             return $this->getWhere([
                 'table'     => $array['table'],
@@ -92,7 +98,8 @@ class MY_Model extends Model
             $builder->limit($array['limit']);
         }
         $query = $builder->get();
-        // echo "<br> =>".$this->db->getLastQuery();
+        // echo "<br> =>" . $this->db->getLastQuery();
+        // die;
         if ($query->getRow() > 0) {
             if (isset($array['row']) && $array['row'] == 1) {
                 return $query->getFirstRow();
@@ -101,6 +108,30 @@ class MY_Model extends Model
             }
         }
     }
+
+    public function DataDelete($array = array())
+    {
+        $builder = $this->db->table($array['table']);
+        if (isset($array['condition']) && count($array['condition']) > 0) {
+            foreach ($array['condition'] as $key => $value) {
+                $builder->where($key, "$value");
+            }
+        }
+        if (isset($array['condition_like_both']) && count($array['condition_like_both']) > 0) {
+            foreach ($array['condition_like_both'] as $key => $value) {
+                $builder->like($key, "$value", 'both');
+            }
+        }
+        $query = $builder->delete();
+        //preview($query);die;
+        //  echo $this->db->getLastQuery();
+        //  die;
+
+        if (isset($query)) {
+            return true;
+        }
+    }
+
     public function getWhereIn($array = array())
     {
         $builder = $this->db->table($array['table']);

@@ -70,7 +70,7 @@ function notify(title, message, type) {
 			type: type,
 			allow_dismiss: true,
 			placement: {
-				from: "bottom",
+				from: "top",
 				align: "right",
 			},
 			offset: {
@@ -80,7 +80,7 @@ function notify(title, message, type) {
 			spacing: 10,
 			z_index: 999999,
 			delay: 2500,
-			timer: 5000,
+			timer: 6000,
 			url_target: "_blank",
 			mouse_over: false,
 			animate: {

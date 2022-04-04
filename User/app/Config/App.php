@@ -1,8 +1,11 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
-class App extends BaseConfig {
+class App extends BaseConfig
+{
 
 	/*
 		|--------------------------------------------------------------------------
@@ -87,7 +90,7 @@ class App extends BaseConfig {
 		| found, the first locale will be used.
 		|
 	*/
-	public $supportedLocales = ['en', 'zh'];
+	public $supportedLocales = ['en', 'cn'];
 
 	/*
 		|--------------------------------------------------------------------------
@@ -182,7 +185,7 @@ class App extends BaseConfig {
 	*/
 	public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
 	public $sessionCookieName = 'ci_session';
-	public $sessionExpiration = 7200;
+	public $sessionExpiration = 0;
 	public $sessionSavePath = WRITEPATH . 'session';
 	public $sessionMatchIP = false;
 	public $sessionTimeToUpdate = 300;

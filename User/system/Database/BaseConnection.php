@@ -965,6 +965,7 @@ abstract class BaseConnection implements ConnectionInterface
 	 * @return BaseBuilder
 	 * @throws DatabaseException
 	 */
+	
 	public function table($tableName)
 	{
 		if (empty($tableName))

@@ -85,18 +85,20 @@ function crypto_rand_secure($min, $max)
     return $min + $rnd;
 }
 
-function reArrayFiles($imgsLoaded) {
+function reArrayFiles($imgsLoaded)
+{
     $imgsList = array();
 
-    foreach($imgsLoaded  as $k1 => $v1) {
+    foreach ($imgsLoaded  as $k1 => $v1) {
         foreach ($v1 as $k2 => $v2) {
-            $imgsList[$k2][$k1] = $v2; 
+            $imgsList[$k2][$k1] = $v2;
         }
     }
     return $imgsList;
 }
 
-function sendSMS($to, $body) {
+function sendSMS($to, $body)
+{
     $url = SMS_URL;
     $fields = [
         "to" => $to,
@@ -110,23 +112,47 @@ function sendSMS($to, $body) {
     // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+
     $result = curl_exec($ch);
     curl_close($ch);
+
     return $result;
 }
 
-function current_date($length = '',$last_date = false)
-    {
-        date_default_timezone_set("Asia/Kuala_Lumpur");
-        if ($length != '' && isset($length) && !$last_date) {
-            return substr(date("Y-m-d H:i:s"), 0, $length);
-        } else if ($last_date) {
-            return date("Y-m-t H:i:s");
-        } else if (($last_date) && ($length != '') && (isset($length))) {
-            return substr(date("Y-m-t H:i:s"), 0, $length);
-        } else {
-            return date("Y-m-d H:i:s");
-        }
-    }
+function sendSMS123($to, $body)
+{
+    $url = SMS123_URL;
+    $uni_id = uniqid() . '_' . time();
+    $to = substr($to, 1);
+    $body = '[VIGRAB] ' . $body;
+    $url = str_replace('[RECIPIENTS]', $to, $url);
+    $url = str_replace('[MESSAGE]', urlencode($body), $url);
+    $url = str_replace('[CUSTOMREFERENCEID]', $uni_id, $url);
+    // $fields = json_encode($fields);
 
-    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    return $result;
+}
+
+function current_date($length = '', $last_date = false)
+{
+    date_default_timezone_set("Asia/Kuala_Lumpur");
+    if ($length != '' && isset($length) && !$last_date) {
+        return substr(date("Y-m-d H:i:s"), 0, $length);
+    } else if ($last_date) {
+        return date("Y-m-t H:i:s");
+    } else if (($last_date) && ($length != '') && (isset($length))) {
+        return substr(date("Y-m-t H:i:s"), 0, $length);
+    } else {
+        return date("Y-m-d H:i:s");
+    }
+}
+
+
+
