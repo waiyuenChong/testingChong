@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controllers;
+
 class Dashboard extends MY_Controller
 {
 
@@ -8,7 +10,7 @@ class Dashboard extends MY_Controller
         parent::__construct();
         // $this->checkLoggedIn();
     }
-    
+
     public function index()
     {
         $header['page']      = 'dash';
@@ -18,10 +20,13 @@ class Dashboard extends MY_Controller
 
         $data               = array(); // define as an arary and store data that get from API
 
+
+        // preview(PLUGIN_PATH . "/bootstrap/css/bootstrap5.1.min.css");
+        // preview(PLUGIN_PATH . "/bootstrap/css/bootstrap5.1.min.js");
+        // die;
+
         echo view('templates/header', $header);
         echo view('dashboard/dash_page', $data);
         echo view('templates/footer', $footer);
     }
-
-
 }

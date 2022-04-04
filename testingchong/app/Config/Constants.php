@@ -80,7 +80,7 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 define('PROJECT', 'template');
 
 // BASE URL
-define('BASE_URL', 'http://localhost/projects/projects_php72/template/ci4_new');
+define('BASE_URL', 'http://localhost/projects/projects_php72/testingChong/testingchong');
 
 // API URL
 define('API_URL', 'http://localhost/projects/projects_php72/charity365/api');
@@ -148,5 +148,4 @@ define('SMTP_USERNAME', 'Charity365');
 define('SMS_URL', 'https://www.idenfic.com/thirdparty/send_sms.php');
 
 // share link
-define('AGENT_SHARE_LINK','https://charity365.org.my/en/donate/create?code=');
-
+define('AGENT_SHARE_LINK', 'https://charity365.org.my/en/donate/create?code=');
