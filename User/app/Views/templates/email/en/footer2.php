@@ -15,11 +15,11 @@
         padding-top: 4%;
     }
 
-    .bfluid {
+    /* .bfluid {
         display: flex;
         justify-content: center;
         padding-bottom: 3%;
-    }
+    } */
 
     .social_media {
         width: 25px;
