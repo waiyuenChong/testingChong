@@ -77,10 +77,10 @@ defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 // PROJECT
-define('PROJECT', '7ech_admin');
+define('PROJECT', 'testingchong');
 
 // BASE URL
-define('BASE_URL', 'http://localhost/projects/projects_php72/7ech_administration/7ech_admin');
+define('BASE_URL', 'http://localhost/projects/projects_php72/testingchong/');
 // define('BASE_URL', 'http://18.138.204.246/ftp/projects_php72/7ech_administration/7ech_admin');
 
 // BILLPLZ_URL
@@ -145,7 +145,7 @@ define('COOKIE_EXP', '31536000');
 define('HOSTNAME', '18.138.204.246');
 define('USER_NAME', 'i4d');
 define('PASSWORD', 'i4d5028');
-define('DATABASE', '7ech_admin');
+define('DATABASE', 'testingchong');
 
 
 
