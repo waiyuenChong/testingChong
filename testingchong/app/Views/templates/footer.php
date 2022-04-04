@@ -49,8 +49,8 @@ if (!empty($js) && isset($js)) {
 
 <script src="<?= PLUGIN_PATH ?>/global/plugins.bundle.js"></script>
 <script src="<?= JS_PATH ?>/scripts.bundle.js"></script>
-<!-- <script src="<?= PLUGIN_PATH ?>/bootstrap/bootstrap.bundle.js"></script>
-<script src="<?= PLUGIN_PATH ?>/bootstrap/bootstrap-popover.js"></script> -->
+<script src="<?= PLUGIN_PATH ?>/bootstrap/js/bootstrap5.1.min"></script>
+<!-- <script src="<?= PLUGIN_PATH ?>/bootstrap/bootstrap-popover.js"></script> -->
 
 </body>
 

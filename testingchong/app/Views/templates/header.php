@@ -33,7 +33,7 @@
     <!-- Required Js -->
     <script src="<?= JS_PATH ?>/jquery.min.js?v=<?= time(); ?>"></script>
     <!-- bootstrap css -->
-  <!-- <link rel="stylesheet" href="<?= CSS_PATH; ?>/bootstrap/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="<?= PLUGIN_PATH; ?>/bootstrap/css/bootstrap5.1.min">
 
     <?php 
 		if( !empty($css) && isset($css) ) {
