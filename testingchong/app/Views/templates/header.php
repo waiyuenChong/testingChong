@@ -35,8 +35,8 @@
 	<!-- Required Js -->
 	<script src="<?= JS_PATH ?>/jquery.min.js?v=<?= time(); ?>"></script>
 	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?= PLUGIN_PATH ?>/bootstrap/css/bootstrap5.1.min.css">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="<?= PLUGIN_PATH ?>/bootstrap/css/bootstrap5.1.min.css"> -->
 	<!-- Notification css -->
 	<link rel="stylesheet" href="<?= PLUGIN_PATH ?>/notification/css/notification.min.css">
 
