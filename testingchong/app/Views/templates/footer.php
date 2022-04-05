@@ -47,8 +47,8 @@ if (!empty($js) && isset($js)) {
 }
 ?>
 
-<script src="<?= PLUGIN_PATH ?>/global/plugins.bundle.js"></script>
-<script src="<?= JS_PATH ?>/scripts.bundle.js"></script>
+<!-- <script src="<?= PLUGIN_PATH ?>/global/plugins.bundle.js"></script>
+<script src="<?= JS_PATH ?>/scripts.bundle.js"></script> -->
 <!-- <script src="<?= PLUGIN_PATH ?>/bootstrap/js/bootstrap5.1.min.js"></script> -->
 <!-- <script src="<?= PLUGIN_PATH ?>/bootstrap/bootstrap-popover.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
