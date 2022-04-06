@@ -51,13 +51,13 @@ echo form_open_multipart('voucher/ruby', $attributes);
                                     <label for="">Leave Type</label>
                                     <select name="leave_type_id" id="leave_type_id">
                                         <?php foreach ($response1 as $key => $value) { ?>
-                                            <option value="<?= $value->id?>"> <?= $value->name?></option>
+                                            <option value="<?= $value->id ?>"> <?= $value->name ?></option>
                                         <?php }
                                         ?>
                                     </select>
 
                                 </div>
-                            </div>  
+                            </div>
 
 
                         </div>
@@ -106,11 +106,15 @@ echo form_open_multipart('voucher/ruby', $attributes);
                                     <td><?= $value->voucher_type ?></td>
                                     <td><?= $value->voucher_quantity ?></td>
                                     <td><?= $value->leave_type_id ?></td>
+                                    <td> <button class="btn btn-update" type="submit" id="update" name="update" value="1" onclick="loader()"><?= "Update" ?></button></td>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
                 </div>
+
+            <?php } ?>
+            </tbody>
+            </table>
+
             </div>
         </div>
     </div>
+</div>
