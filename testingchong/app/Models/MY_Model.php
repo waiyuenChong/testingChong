@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -7,16 +9,19 @@ class MY_Model extends Model
 
     public function __construct()
     {
-        $array = explode(",",DATABASE_ARRAY);
-        foreach ($array as $key => $value) {
-            $this->$value = \Config\Database::connect("$value");
-        }
+            $this->db = \Config\Database::connect("default");
+            // preview($this->db);
+            // die;    
     }
 
-    public function DataInsert($array = array(),$type = 'default')
+    public function DataInsert($array = array())
     {
-        $builder = $this->$type->table($array['table']);
+
+        // preview($array);
+        // die;    
+        $builder = $this->db->table($array['table']);
         $query   = $builder->insert($array['data']);
+        // echo $this->db->getLastQuery();
         if (isset($query) && $query == 1) {
             return $this->getWhere([
                 'table'     => $array['table'],
@@ -26,9 +31,9 @@ class MY_Model extends Model
             ])->id;
         }
     }
-    public function DataUpdate($array = array(),$type = 'default')
+    public function DataUpdate($array = array())
     {
-        $builder = $this->$type->table($array['table']);
+        $builder = $this->db->table($array['table']);
         if (isset($array['data']) && count($array['data']) > 0) {
             foreach ($array['data'] as $key => $value) {
                 $builder->set($key, $value);
@@ -60,9 +65,9 @@ class MY_Model extends Model
             ])->id;
         }
     }
-    public function getWhere($array = array(),$type = 'default')
+    public function getWhere($array = array())
     {
-        $builder = $this->$type->table($array['table']);
+        $builder = $this->db->table($array['table']);
         if (isset($array['select']) && (!empty($array['select']))) {
             $builder->select($array['select']);
         } else {
@@ -101,9 +106,9 @@ class MY_Model extends Model
             }
         }
     }
-    public function getWhereIn($array = array(),$type = 'default')
+    public function getWhereIn($array = array())
     {
-        $builder = $this->$type->table($array['table']);
+        $builder = $this->db->table($array['table']);
         if (isset($array['select']) && (!empty($array['select']))) {
             $builder->select($array['select']);
         } else {
@@ -138,9 +143,9 @@ class MY_Model extends Model
             }
         }
     }
-    public function getWhereOr($array = array(),$type = 'default')
+    public function getWhereOr($array = array())
     {
-        $builder = $this->$type->table($array['table']);
+        $builder = $this->db->table($array['table']);
         if (isset($array['select']) && (!empty($array['select']))) {
             $builder->select($array['select']);
         } else {
@@ -179,5 +184,4 @@ class MY_Model extends Model
             }
         }
     }
-
 }

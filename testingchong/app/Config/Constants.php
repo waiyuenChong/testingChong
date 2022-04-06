@@ -134,7 +134,7 @@ define('COOKIE_EXP', '31536000');
 define('HOSTNAME', '18.138.204.246');
 define('USER_NAME', 'i4d');
 define('PASSWORD', 'i4d5028');
-define('DATABASE', 'vigrab');
+define('DATABASE', 'testingchong');
 
 define('DATABASE_ARRAY', "default");
 

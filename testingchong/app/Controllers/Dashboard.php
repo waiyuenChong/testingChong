@@ -20,7 +20,8 @@ class Dashboard extends MY_Controller
 
         $data               = array(); // define as an arary and store data that get from API
 
-
+        preview('asdadasd');
+        die;
         // preview(PLUGIN_PATH . "/bootstrap/css/bootstrap5.1.min.css");
         // preview(PLUGIN_PATH . "/bootstrap/css/bootstrap5.1.min.js");
         // die;
