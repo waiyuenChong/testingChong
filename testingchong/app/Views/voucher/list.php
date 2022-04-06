@@ -50,7 +50,7 @@ echo form_open_multipart('voucher/ruby', $attributes);
                                 <div class="col-12">
                                     <label for="">Leave Type</label>
                                     <select name="leave_type_id" id="leave_type_id">
-                                        <?php foreach ($respone1 as $key => $value) { ?>
+                                        <?php foreach ($response1 as $key => $value) { ?>
                                             <option value="<?= $value->id?>"> <?= $value->name?></option>
                                         <?php }
                                         ?>

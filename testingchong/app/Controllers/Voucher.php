@@ -86,12 +86,11 @@ class Voucher extends MY_Controller
 
 
 
-        $data['response'] = isset($response) ? $response : [];
-        $data['respone1'] = isset($response1) ? $response1 : [];
+        $data['response1'] = isset($response1) ? $response1 : []; 
 
 
         
-        // preview($data);die;
+        // preview($data);die;  
         echo view('templates/header', $header);
         echo view('voucher/list', $data);
         echo view('templates/footer', $footer);
