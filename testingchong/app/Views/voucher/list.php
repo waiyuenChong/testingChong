@@ -98,17 +98,26 @@ echo form_open_multipart('voucher/ruby', $attributes);
                         </thead>
                         <tbody>
                             <?php
+                            // preview($response);
+                            // preview($response1);
                             foreach ($response as $key => $value) {
-                            ?>
+                                // foreach ($response1 as $key1 => $value1) {
+                                //     if ($value->leave_type_id == $value1->id) {
+                                //         $tiger = $value1->name;
+                                //     }
+                                // }
+                            // ?>
                                 <tr>
                                     <td><?= $value->id ?></td>
                                     <td><?= $value->user_id ?></td>
                                     <td><?= $value->user_name ?></td>
                                     <td><?= $value->voucher_type ?></td>
                                     <td><?= $value->voucher_quantity ?></td>
-                                    <td><?= $value->leave_type_id ?></td>
+                                    <td><?= $value->name ?></td>
+                                    <!-- <td><?= $tiger ?> </td> -->
                                     <td> <button class="btn btn-update" type="button" data-bs-toggle="modal" data-bs-target="#update_modal_<?= $value->id ?>">Update</button></td>
                                 </tr>
+
                 </div>
                 <?php
                                 $attributes = array('class' => 'add_agent', 'id' => 'add_agent_form', "onsubmit" => "loader()", 'autocomplete' => "off");
@@ -171,7 +180,8 @@ echo form_open_multipart('voucher/ruby', $attributes);
                 </div>
                 </form>
 
-            <?php } ?>
+            <?php }
+            ?>
             </tbody>
             </table>
 

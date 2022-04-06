@@ -37,8 +37,9 @@ class Voucher extends MY_Controller
 
         $data               = array(); // define as an arary and store data that get from API
         if ($_POST) {
-            // preview($_POST);die;    
-            if ($_POST['type' == 1]) {
+            // preview($_POST);
+            // die;    
+            if ($_POST['type'] == 1) {
                 $create_voucher = array(
                     'table' => 'Voucher',
                     'data'  => array(
@@ -55,6 +56,8 @@ class Voucher extends MY_Controller
 
 
 
+            // preview($create_voucher);
+            // die;
             $response = $this->model->DataInsert($create_voucher);
         };
 
@@ -66,24 +69,28 @@ class Voucher extends MY_Controller
         // preview($data);die;
 
         $table_voucher = array(
-            'table'     => 'Voucher',
-            'select'    => 'id, user_id, user_name, voucher_type, voucher_quantity, leave_type_id',
+            'table'     => 'Voucher v',
+            'select'    => 'v.id, v.user_id, v.user_name, v.voucher_type, v.voucher_quantity, v.leave_type_id, lt.name',
+            'join'      => ['Leave_type lt' => 'v.leave_type_id = lt.id'],
         );
 
+        $response = $this->model->getWhere($table_voucher);
 
-
-
+        
+        
         $table_leave = array(
             'table'     => 'Leave_type',
             'select'    => 'id, name',
             'condition'    => array('status' => 1),
             // 'condition' => 'status = 1',
         );
-
-
-        $response = $this->model->getWhere($table_voucher);
+        
+        
+        
+        
+        // preview($response);die;
         $response1 = $this->model->getWhere($table_leave);
-
+        
         $data['response'] = isset($response) ? $response : [];
         $data['response1'] = isset($response1) ? $response1 : [];
 
